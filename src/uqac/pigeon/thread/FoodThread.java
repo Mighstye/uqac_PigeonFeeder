@@ -50,7 +50,7 @@ public class FoodThread extends Thread{
         return foods;
     }
 
-    public void eatFood(Food food) {
+    public synchronized void eatFood(Food food) {
         foods.remove(food);
         removeFood(food);
     }

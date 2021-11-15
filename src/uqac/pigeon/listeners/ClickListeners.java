@@ -15,7 +15,6 @@ public class ClickListeners {
             @Override
             public void mousePressed(MouseEvent e) {
                 game.getFoodThread().addFood(e.getX(), e.getY());
-                System.out.println("Click : " + e.getX() + " " + e.getY());
             }
         });
     }
