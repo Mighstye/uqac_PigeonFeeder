@@ -21,15 +21,15 @@ public class FoodThread extends Thread{
                 for (Iterator<Food> it = foods.iterator(); it.hasNext();) {
                     Food food = it.next();
                     food.tick();
-                    if(food.getTick() > 2 && food.getTick() <= 4)
+                    if(food.getTick() > 10 && food.getTick() <= 15)
                         food.makeRotten();
-                    if(food.getTick() > 4) {
+                    if(food.getTick() > 15) {
                         it.remove();
                         removeFood(food);
                     }
                 }
             }
-        },2000,2000);
+        },0,1000);
     }
 
     public void addFood(int x, int y) {
@@ -50,7 +50,7 @@ public class FoodThread extends Thread{
         return foods;
     }
 
-    public synchronized void eatFood(Food food) {
+    public void eatFood(Food food) {
         foods.remove(food);
         removeFood(food);
     }

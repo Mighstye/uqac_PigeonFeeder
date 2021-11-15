@@ -25,6 +25,9 @@ public class Food {
 
     public void makeRotten() {
         this.rotten = true;
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon("rotten.png").getImage().getScaledInstance(150,150, Image.SCALE_DEFAULT));
+        imageIcon.getImage().flush();
+        label.setIcon(imageIcon);
     }
 
     public JLabel getLabel() {
